@@ -1,34 +1,30 @@
-package HotelManagment;
+package Main;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.LinkedList;
 
-import Booking.Booking;
-import Customer.Customer;
-import register.Register;
+import Booking.BookingClass;
+import Customer.CustomerClass;
+import Register.RegisterClass;
 
 
+public class MainClass {
 
-public class Main {
-	
-
-	public static ArrayList<Integer>arrcusID=new ArrayList<Integer>();
-	public static ArrayList<String> arrname= new ArrayList<String>();
-	public static ArrayList<String> arremail= new ArrayList<String>();
-	public static ArrayList<Integer> arrdate=new ArrayList<Integer>();
-	public static ArrayList<Integer> arrbooking=new ArrayList<Integer>();
+	public static LinkedList<Integer>arrcusID=new LinkedList<Integer>();
+	public static LinkedList<String> arrname= new LinkedList<String>();
+	public static LinkedList<String> arremail= new LinkedList<String>();
+	public static LinkedList<Integer> arrdate=new LinkedList<Integer>();
+	public static LinkedList<Integer> arrbooking=new LinkedList<Integer>();
 	static int regID=1;
 	
-	public static void main(String[] args) throws NumberFormatException, IOException 
-	{
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
 		
-		
-		Customer customer=new Customer();
-		Booking book=new Booking();
-		Register reg=new Register();
+		CustomerClass customer=new CustomerClass();
+		BookingClass book=new BookingClass();
+		RegisterClass reg=new RegisterClass();
 		String menu;
 		String ac;
 		String cot;
@@ -143,7 +139,7 @@ public class Main {
 					{
 						if(arrdate.get(i)>=start&&arrdate.get(i)<=end)
 						{
-							System.out.println("\t\t"+Booking.Room.get(i)+"\t\t"+arrbooking.get(i));
+							System.out.println("\t\t"+BookingClass.Room.get(i)+"\t\t"+arrbooking.get(i));
 						}
 					}
 				
